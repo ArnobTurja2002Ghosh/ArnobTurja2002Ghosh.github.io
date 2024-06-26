@@ -1,0 +1,44 @@
+
+<html>
+
+<head><meta charset="utf-8"></head>
+
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
+<script type="text/javascript" src="Sudoku.js"></script>
+<script type="text/javascript" src="GA_Student.js"></script>
+<script type="text/javascript" src="GASettings.js"></script>
+<script type="text/javascript" src="GUI.js"></script>
+<script type="text/javascript" src="GAGUI.js"></script>
+
+
+<body >
+<style> 
+    .Gratitude{
+        z-index:500;
+    }
+</style>
+<div id="GAContainer"></div>
+<script>
+
+// construct the map based on the text in the textarea
+let gui = new GAGUI(document.getElementById("GAContainer"));
+//console.log(gui.settings.fitnessFunction);
+let count;
+// set up the main loop
+setInterval(update, 1000 / 60);
+function update() {
+    if(gui.settings.fitnessFunction(gui.sudoku.board)<5){
+        gui.update(); 
+        count=0;
+    }
+    else if(count<20){
+        gui.update(); 
+        count++
+    }
+}
+
+</script>
+
+</body>
+
+</html>
