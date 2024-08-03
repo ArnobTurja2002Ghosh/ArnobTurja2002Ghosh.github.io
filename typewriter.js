@@ -39,4 +39,4 @@ function erase(){
         setTimeout(type, 1000);
     }
 }
-type();
+setTimeout(type, 1000);
