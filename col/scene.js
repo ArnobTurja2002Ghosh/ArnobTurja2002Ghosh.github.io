@@ -82,10 +82,10 @@ class Scene
             this.player.state="jumping";
         }
         if(this.player.right){
-            this.player.velocity[0]+=2;
+            this.player.velocity[0]+=0.2;
         }
         else if(this.player.left){
-            this.player.velocity[0]-=2;
+            this.player.velocity[0]-=0.2;
         }
         if(this.player.velocity[0]>20){
             this.player.velocity[0]=20;
