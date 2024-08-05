@@ -2,6 +2,41 @@
 Arnob's Home Page 
 </TITLE>
 
+<canvas id="myCanvas" width="1280" height="640" style="border:1px solid #000000;">
+  Your browser does not support the HTML canvas tag.
+</canvas>
+<script src="col/Entity.js"></script>
+<script src="col/scene.js"></script>
+<script src="col/Physics.js"></script>
+<!-- <script>
+  let scene1= new Scene();
+  scene1.init();
+  scene1.update();
+</script> -->
+<script>
+  init1 = function() {
+      
+      let scene1= new Scene();
+      scene1.init();
+      // set up the main loop
+      setInterval(update, 1000 / 60);
+      function update() {
+          scene1.update();
+      }
+  }
+</script>
+  
+  <body onload="init1()"> </body>
+
+
+  <table style="width: 500px">
+      <tr>
+        <th>KeyW - Jump</th>
+        <th>KeyA - Run left</th>
+        <th>KeyD - Run right</th>
+      </tr>
+  </table>
+
 <BR>
 
 
@@ -10,6 +45,7 @@ Arnob's Home Page
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Arnob's Homepage</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="style1.css">
     <link rel="stylesheet" href="style2.css">
 </head>

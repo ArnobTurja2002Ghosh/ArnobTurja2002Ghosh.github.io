@@ -1,0 +1,37 @@
+<html>
+
+    <canvas id="myCanvas" width="1280" height="640" style="border:1px solid #000000;">
+        Your browser does not support the HTML canvas tag.
+    </canvas>
+    <script src="Entity.js"></script>
+    <script src="scene.js"></script>
+    <script src="Physics.js"></script>
+    <!-- <script>
+        let scene1= new Scene();
+        scene1.init();
+        scene1.update();
+    </script> -->
+    <script>
+        init1 = function() {
+            
+            let scene1= new Scene();
+            scene1.init();
+            // set up the main loop
+            setInterval(update, 1000 / 60);
+            function update() {
+                scene1.update();
+            }
+        }
+    </script>
+        
+        <body onload="init1()"> </body>
+    
+
+        <table style="width: 500px">
+            <tr>
+              <th>KeyW - Jump</th>
+              <th>KeyA - Run left</th>
+              <th>KeyD - Run right</th>
+            </tr>
+        </table>
+</html>
