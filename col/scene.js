@@ -19,6 +19,7 @@ class Scene
             this.entityManager.push(new Entity('brown', [64*16+i*64-18, 64*5, 64, 64], arr1[i]))
         }
         this.player=new Entity("rgb(60, 188, 252)", [64*2, 64*4, 32, 32])
+        this.player.sprite=document.getElementById('images');
 
         this.entityManager.push(this.player);
     }
@@ -62,14 +63,19 @@ class Scene
         this.ctx.font = 64 + 'pt Arial';
         this.ctx.fillText("ARNOB", 64*11, 64*6);
         for(let i of this.entityManager){
-            this.ctx.fillStyle=i.color;
-            this.ctx.fillRect(i.rect[0], i.rect[1], i.rect[2], i.rect[3]);
-            this.ctx.strokeRect(i.rect[0], i.rect[1], i.rect[2], i.rect[3]);
-            if(i.texture != null){
-                this.ctx.fillStyle="rgb(0, 0, 0)";
-                this.ctx.font = 60 + 'pt Arial';
-                let tsize = this.ctx.measureText(i.texture).width / 2;
-                this.ctx.fillText(i.texture, i.rect[0] + 0.5*i.rect[2] -tsize, i.rect[1]+i.rect[3]);
+            if(i.sprite==null){
+                this.ctx.fillStyle=i.color;
+                this.ctx.fillRect(i.rect[0], i.rect[1], i.rect[2], i.rect[3]);
+                this.ctx.strokeRect(i.rect[0], i.rect[1], i.rect[2], i.rect[3]);
+                if(i.texture != null){
+                    this.ctx.fillStyle="rgb(0, 0, 0)";
+                    this.ctx.font = 60 + 'pt Arial';
+                    let tsize = this.ctx.measureText(i.texture).width / 2;
+                    this.ctx.fillText(i.texture, i.rect[0] + 0.5*i.rect[2] -tsize, i.rect[1]+i.rect[3]);
+                }
+            }
+            else{
+                this.ctx.drawImage(i.sprite, i.rect[0], i.rect[1], i.rect[2], i.rect[3]);
             }
         }
     }
@@ -83,9 +89,11 @@ class Scene
         }
         if(this.player.right){
             this.player.velocity[0]+=0.2;
+            console.log('p');
         }
         else if(this.player.left){
             this.player.velocity[0]-=0.2;
+            console.log('p');
         }
         if(this.player.velocity[0]>20){
             this.player.velocity[0]=20;
@@ -97,7 +105,7 @@ class Scene
             this.player.velocity[0]=0;
         }
         
-        this.player.prevRect=this.player.rect;
+        this.player.prevRect=[...this.player.rect];
         this.player.velocity[1]+=0.75;
 
         for(let i of this.entityManager){
@@ -115,13 +123,10 @@ class Scene
     {
         let physics1=new Physics();
         for(let t1 of this.getBrown()){
-            if(physics1.getOverlap(t1, this.player)[0]>=0 && physics1.getOverlap(t1, this.player)[1]>0){
-                if(physics1.getPreviousOverlap(t1, this.player)[0]>0 && physics1.getPreviousOverlap(t1, this.player)[1]>0){
-                    //console.log('something wrong here', physics1.getPreviousOverlap(t1, this.player));
-                    //console.log(t1.rect, this.player.prevRect);
-                }
+            if(physics1.getOverlap(t1, this.player)[0]>0 && physics1.getOverlap(t1, this.player)[1]>0){
+                
                 if(physics1.getPreviousOverlap(t1, this.player)[0]>0){
-                    if(this.player.prevRect[1] < t1.rect[1]){
+                    if(this.player.prevRect[1]< t1.rect[1]){
                         //console.log(physics1.getPreviousOverlap(t1, this.player));
                         this.player.rect[1]-= physics1.getOverlap(t1, this.player)[1];
                         //console.log(physics1.getPreviousOverlap(t1, this.player));
@@ -132,18 +137,21 @@ class Scene
                         this.to_die.push(t1);
                     }
                     this.player.velocity[1]=0;
+
                 }
-                // else if(physics1.getPreviousOverlap(t1, this.player)[1]>0){
-                //     if(this.player.prevRect[0] < t1.rect[0]){
-                //         //console.log('i work');
-                //         this.player.rect[0]-= physics1.getOverlap(t1, this.player)[0];
-                //         this.player.state='standing';
-                //     }
-                //     else if(this.player.prevRect[0] > t1.rect[0]){
-                //         this.player.rect[0]+= physics1.getOverlap(t1, this.player)[0];
-                //     }
-                //     this.player.velocity[0]=0;
-                // }
+                else if(physics1.getPreviousOverlap(t1, this.player)[1]>0){
+                    if(this.player.prevRect[0] < t1.rect[0]){
+                        console.log('shifting left');
+                        this.player.rect[0]-= physics1.getOverlap(t1, this.player)[0];
+                    }
+                    else if(this.player.prevRect[0] > t1.rect[0]){
+                        console.log('shifting right');
+                        this.player.rect[0]+= physics1.getOverlap(t1, this.player)[0];
+                    }
+                    this.player.velocity[0]*=-1;
+                    
+                }
+                
             }
         }
     }
