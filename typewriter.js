@@ -1,4 +1,13 @@
 const typedText = document.getElementById("typed-text-1");
+
+typedText.addEventListener('click', function() { 
+    // This function will be executed whenever the button is clicked 
+    if(textArrayIndex==2){
+        textArrayIndex=0; charIndex=0; typedText.textContent="";
+        type();
+    }
+    
+  });
 const cursor = document.getElementById("cursor1");
 const textArray = ["Argob", "Arnon", "Arnob"];
 
@@ -39,4 +48,5 @@ function erase(){
         setTimeout(type, 1000);
     }
 }
-setTimeout(type, 1000);
+
+type();
