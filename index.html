@@ -8,11 +8,7 @@ Arnob's Home Page
 <script src="col/Entity.js"></script>
 <script src="col/scene.js"></script>
 <script src="col/Physics.js"></script>
-<!-- <script>
-  let scene1= new Scene();
-  scene1.init();
-  scene1.update();
-</script> -->
+
 <script>
   init1 = function() {
       
@@ -37,6 +33,15 @@ Arnob's Home Page
       </tr>
   </table>
 
+  <style>
+    @media screen and (min-width: 0px) {
+      canvas:nth-last-of-type(1){display: none;}
+    }
+    @media screen and (min-width: 1280px) {
+      canvas:nth-last-of-type(1){display: block;}
+    }
+    
+  </style>
 <BR>
 
 
@@ -47,6 +52,7 @@ Arnob's Home Page
     <title>Arnob's Homepage</title>
     <link rel="stylesheet" href="style1.css">
     <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <H1 class="cn"> 
   ArnoB 
@@ -56,7 +62,7 @@ Arnob's Home Page
 
 
 <HR>
-<BLOCKQUOTE>
+<BLOCKQUOTE class="ml-2">
 <EM>To me, however, the whole world is a homeland, like the sea to fish - <BR>
   though I drank from the <b>Arno b</b>efore cutting my teeth, <BR>
   and love Florence so much that, because I loved her, I suffer exile unjustly - <BR>
@@ -86,7 +92,7 @@ Arnob's Home Page
 
 <HR>
 
-<BLOCKQUOTE>
+<BLOCKQUOTE class="ml-2">
   <EM>
     Him the Ammonite <BR>
     Worshiped in Rabba and her watery Plain, <BR>
@@ -98,7 +104,7 @@ Arnob's Home Page
 
 <HR>
 
-<main>
+<main class="ml-2">
     <div id="content">
   
     <section class="font1">
@@ -162,71 +168,97 @@ Arnob's Home Page
             </ul>
           </p>
 
-          <div class="div1">
-            <img src="imgs1/Screenshot195835.jpg" width="350px">
-            <p> 
-              <A href="https://github.com/tabannum-lit/">Tabannum</A> and I developed a tic-tac-toe game using the brython library of python. 
-              This project is available upon request only, so please feel free to contact any of us. 
-              My contact information is at the end of this page.
-            </p>
+          <div class="row">
+            <div class="col">            
+              <div class="card" style="width: 25rem;">
+                <img class="card-img-top" src="imgs1/Screenshot195835.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text"><A href="https://github.com/tabannum-lit/">Tabannum</A> and I developed a tic-tac-toe game using the brython library of python. 
+                    This project is available upon request only, so please feel free to contact any of us. 
+                    My contact information is at the end of this page.
+                  </p>
+                  
+                </div>
+              </div>
+            </div>
+
+            <div class="col"> 
+              <div class="card" style="width: 25rem">
+                <div class="card-body">
+                  <p class="card-text">
+                    I have written search algorithms like <a HREF=https://github.com/ArnobTurja2002Ghosh/Search>BFS, DFS,</a> <a HREF=https://github.com/ArnobTurja2002Ghosh/Search2>A*,</a> <a HREF=https://github.com/ArnobTurja2002Ghosh/IDDFS>IDDFS</a> without any use of recursion, using Javascript. 
+                    However, they are just the rough algorithms and cannot be implemented (you cannot simply download and run the repositories) since the environment (or map), configuration etc. that these algorithms require as inputs, have not been written by me and so are not there in the repositories.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col">
+              <div class="card" style="width: 40rem">
+                <img class="card-img-top" src="imgs1/croc_copy.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text">
+                    <p>
+                    If you want to see a Javascript project that you can run - or may I say, "play" - <a HREF=https://github.com/zawadman>Zawad Mutawassit</a> and I, in a project called "ProjectAI", developed a game which we informally call "FishFrenz".
+                    Instructions about how you can interact in the game is provided in the README.
+                    The game does not contain any GUI: when the game ends, the program crashes, but you can restart the game by simply reloading the browser where you are playing.  
+                    </p>
+                    <p>
+                      FishFrenz story: It is a snowy night. Your enemy - the crocodile - is trying to eat your fish friends.
+                      The fish are capricious; they take erratic turns in every frame; you can never be sure which direction a fish will be travelling.
+                      The voracious enemy targets one of the fish in the water. 
+                      The truculent crocodile will breach the border of the territory of fish because the 
+                      direction of the targetted fish is the catalyst that gives the enemy its direction of motion.
+                      The enemy thinks that because it is hard to see in snow, let alone at night, it cannot get shot by you, so it will succeed.
+                      Only your winning can disabuse the crocodile.
+                    </p>
+                  </p>
+                  <a href="https://github.com/ArnobTurja2002Ghosh/ProjectAI" class="btn btn-primary">Go to the repository</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card" style="width: 40rem">
+                <img class="card-img-top" src="imgs1/Screenshot132701.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text"> 
+                    <a href="https://github.com/Catalina430">Github user Catalina430</a> created a game analogous to the top-down multi-directional 
+                    shoot 'em up known as <a href="https://en.wikipedia.org/wiki/Geometry_Wars">Geometry Wars</a>. 
+                    When I found that <a href = "https://github.com/Catalina430/Geometry-Wars">his project</a> was made using SFML,
+                    the same library with which I made my first C++ project, 
+                    I worked on it with alacrity, intending to incorporate some GUIs to the game, 
+                    but ended up making changes to the SFML part of the project too. 
+                    I cannot guarantee that the result of the changes is better than the original one by Catalina430, maybe he would argue that I 
+                    exacerbated his project, so I did not fork-and-contribute,
+                    in lieu I claimed mine to be a disparate project and named it Project Catalina430
+                    (more details and updates about the project are in the README of the repository).
+                  </p>
+                  <a href="https://github.com/ArnobTurja2002Ghosh/Catalina430" class="btn btn-primary">Go to the repository</a>
+                </div>
+              </div>
+            </div>  
           </div>
 
-          <p> I have written search algorithms like <a HREF=https://github.com/ArnobTurja2002Ghosh/Search>BFS, DFS,</a> <a HREF=https://github.com/ArnobTurja2002Ghosh/Search2>A*,</a> <a HREF=https://github.com/ArnobTurja2002Ghosh/IDDFS>IDDFS</a> without any use of recursion, using Javascript. 
-            However, they are just the rough algorithms and cannot be implemented (you cannot simply download and run the repositories) since the environment (or map), configuration etc. that these algorithms require as inputs, have not been written by me and so are not there in the repositories.</p>
-          
-          
-          <div class="div1">
-            <a href="https://github.com/ArnobTurja2002Ghosh/ProjectAI"><img src="imgs1/croc_copy.jpg" width="350px"></a>
-            <p> If you want to see a Javascript project that you can run - or may I say, "play" - <a HREF=https://github.com/zawadman>Zawad Mutawassit</a> and I, in <a HREF=https://github.com/ArnobTurja2002Ghosh/ProjectAI>ProjectAI</a>, developed a game which we informally call "FishFrenz".
-              Instructions about how you can interact in the game is provided in the README.
-              The game does not contain any GUI: when the game ends, the program crashes, but you can restart the game by simply reloading the browser where you are playing.  
-            </p>
-            <p>
-              FishFrenz story: It is a snowy night. Your enemy - the crocodile - is trying to eat your fish friends.
-              The fish are capricious; they take erratic turns in every frame; you can never be sure which direction a fish will be travelling.
-              The voracious enemy targets one of the fish in the water. 
-              The truculent crocodile will breach the border of the territory of fish because the 
-              direction of the targetted fish is the catalyst that gives the enemy its direction of motion.
-              The enemy thinks that because it is hard to see in snow, let alone at night, it cannot get shot by you, so it will succeed.
-              Only your winning can disabuse the crocodile.
-            </p>
-          </div>
-
-          
-          <div class="div1">
-            <a href="https://github.com/ArnobTurja2002Ghosh/BouncingShapes"><img src="imgs1/Screenshot141954.jpg" width="350px"></a>
-            <p> 
-              Check out <a href="https://github.com/ArnobTurja2002Ghosh/BouncingShapes">my first C++ project</a>  
-              using SFML and IMGui, inspired from a Youtube tutorial.
-            </p>
+          <div class="card" style="width: 25rem">
+            <img class="card-img-top" src="imgs1/Screenshot141954.jpg" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">
+                Check out my first C++ project using SFML and IMGui, inspired from a Youtube tutorial.
+              </p>
+              <a href="https://github.com/ArnobTurja2002Ghosh/BouncingShapes" class="btn btn-primary">Go to the repository</a>
+            </div>
           </div>
           
-
-          <div class="div1">
-            <a href="https://github.com/ArnobTurja2002Ghosh/Catalina430"><img src="imgs1/Screenshot132701.jpg" width="350px"></a>
-            <p> 
-              <a href="https://github.com/Catalina430">Github user Catalina430</a> created a game analogous to the top-down multi-directional 
-              shoot 'em up known as <a href="https://en.wikipedia.org/wiki/Geometry_Wars">Geometry Wars</a>. 
-              When I found that <a href = "https://github.com/Catalina430/Geometry-Wars">his project</a> was made using SFML,
-              the same library with which I made my first C++ project, 
-              I worked on it with alacrity, intending to incorporate some GUIs to the game, 
-              but ended up making changes to the SFML part of the project too. 
-              I cannot guarantee that the result of the changes is better than the original one by Catalina430, maybe he would argue that I 
-              exacerbated his project, so I did not fork-and-contribute,
-              in lieu I claimed mine to be a disparate project and named it <a href="https://github.com/ArnobTurja2002Ghosh/Catalina430">Project Catalina430</a>
-              (more details and updates about the project are in the README of the repository).
-            </p>
-          </div>
-          
-          <div class="div1">
-            <p>
-              Check out my <a href="GArnob/index.html">GArnob</a> Javascript project where a simple concept of Genetic Algorithm (GA) is implemented. 
-              This project, unlike the ProjectAI, contains functioning GUI like combo-boxes, buttons and sliders.
-              It also implements the highcharts library. To run this project, you do not need to download any of my repositories; 
-              click the provided link and you will be directed to the result because, as you know, Javascript can be interpreted by a browser;
-              and also, this project would be hardly of any use to you unless you modify it for yourself (or hire me so that I can do something similar for you)
-              hence is barely worth occupying the space of your computer.
-            </p>
+        
+          <div class="card" style="width: 25rem">
+            <img class="card-img-top" src="imgs1/Screenshot 2024-10-30 022641.jpg" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text"> 
+              </p>
+              <a href="https://github.com/ArnobTurja2002Ghosh/JavaSwing1" class="btn btn-primary">Go to the repository</a>
           </div>
         </section>
   
