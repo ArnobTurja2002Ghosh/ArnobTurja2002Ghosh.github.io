@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <TITLE> 
 Arnob's Home Page 
 </TITLE>
@@ -25,7 +26,7 @@ Arnob's Home Page
   <body onload="init1()"> </body>
 
 
-  <table style="width: 500px">
+  <table style="width: 500px" class="table d-none d-lg-block">
       <tr>
         <th>KeyW - Jump</th>
         <th>KeyA - Run left</th>
@@ -52,7 +53,11 @@ Arnob's Home Page
     <title>Arnob's Homepage</title>
     <link rel="stylesheet" href="style1.css">
     <link rel="stylesheet" href="style2.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <!-- Bootstrap -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" defer></script>
+ 
+
 </head>
 <H1 class="cn"> 
   ArnoB 
@@ -242,27 +247,95 @@ Arnob's Home Page
             </div>  
           </div>
 
-          <div class="card" style="width: 25rem">
-            <img class="card-img-top" src="imgs1/Screenshot141954.jpg" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">
-                Check out my first C++ project using SFML and IMGui, inspired from a Youtube tutorial.
-              </p>
-              <a href="https://github.com/ArnobTurja2002Ghosh/BouncingShapes" class="btn btn-primary">Go to the repository</a>
+          <div class="row">
+            <div class="column col-lg-4">
+
+              <div class="card" style="width: 25rem">
+                <img class="card-img-top" src="imgs1/Screenshot141954.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text">
+                    Check out my first C++ project using SFML and IMGui, inspired from a Youtube tutorial.
+                  </p>
+                  <a href="https://github.com/ArnobTurja2002Ghosh/BouncingShapes" class="btn btn-primary">Go to the repository</a>
+                </div>
+              </div>
+
             </div>
+
+            <!-- <div class="column col-lg-4">
+
+              <div class="card" style="width: 25rem">
+                <img class="card-img-top" src="imgs1/Screenshot 2024-10-30 022641.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text"> 
+                    This Java Swing project allows you to fill a grid with tiles of different shapes and colors.
+                    The biggest challenge in this project was to ensure that the user cannot place a tile on the top of another
+                    - that is, there is no overlap of tiles. As long as there is no overlap, you can place your tile anywhere in the 9*9 grid. 
+                  </p>
+                  <a href="https://github.com/ArnobTurja2002Ghosh/JavaSwing1" class="btn btn-primary">Go to the repository</a>
+                </div>
+              </div>
+
+            </div> -->
+            
           </div>
           
-        
-          <div class="card" style="width: 25rem">
-            <img class="card-img-top" src="imgs1/Screenshot 2024-10-30 022641.jpg" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text"> 
-              </p>
-              <a href="https://github.com/ArnobTurja2002Ghosh/JavaSwing1" class="btn btn-primary">Go to the repository</a>
+          <div id="carouselExampleSlidesOnly" class="carousel slide w-50" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="imgs1/Screenshot 2024-11-05 165407.jpg" alt="...">
+                <div class="text-dark carousel-caption">
+                  <h5 class="text-center">JavaSwing1</h5>
+                  <p class="d-none d-lg-block"> 
+                    This Java Swing project allows you to fill a grid with tiles of different shapes and colors.
+                    The biggest challenge in this project was to ensure that the user cannot place a tile on the top of another
+                    - that is, there is no overlap of tiles. As long as there is no overlap, you can place your tile anywhere in the 9*9 grid. 
+                    Initially, the grid is white and empty, as you can see in this image. A tile is chosen by clicking the "choose shape" button. 
+                    After choosing a tile, hover over the grid to select a position (or to check if the tile can be placed in that position). 
+                    Click on the grid to place your tile.
+                  </p>
+                  <a href="https://github.com/ArnobTurja2002Ghosh/JavaSwing1" class="btn btn-primary">Go to the repository</a>
+                
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <img class="d-block w-100" src="imgs1/Screenshot 2024-10-30 024532.jpg" alt="...">
+                <div class="text-dark">
+                  <h5 class="text-center">JavaSwing1</h5>
+                  <p class=""> 
+                    This Java Swing project allows you to fill a grid with tiles of different shapes and colors.
+                    The biggest challenge in this project was to ensure that the user cannot place a tile on the top of another
+                    - that is, there is no overlap of tiles. As long as there is no overlap, you can place your tile anywhere in the 9*9 grid. 
+                    A tile is selected using the interface you can see in the above image. The orientation of a shape can be changed using the "rotate" button on it.
+                    Intuitively, "select" buttons are to select a shape and color. Once a shape and color is selected, you will be taken to the grid where you can place the tile of your selected shape, color and rotation.
+                  </p>
+                  <a href="https://github.com/ArnobTurja2002Ghosh/JavaSwing1" class="btn btn-primary">Go to the repository</a>
+                
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <img class="d-block w-100" src="imgs1/Screenshot 2024-10-30 022641.jpg" alt="...">
+                
+              </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#carouselExampleSlidesOnly" role="button" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleSlidesOnly" role="button" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+
           </div>
+
+          
+
         </section>
-  
-  
+
+    <hr>
     <section>
   
        <h1><a name="contact" id="contact"></a>Contact</h1>
