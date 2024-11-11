@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" defer></script>
+    <title>D.A.V.E.</title>
+</head>
+<body class="ms-2">
+    <h1>Project Title: D.A.V.E. (Deadly Alien Vanquishing Entity)</h1>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-5">
+                        <a class="nav-link" href="#ss">Scene Specification</a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a class="nav-link" href="#sgm">Specific Game Mechanics</a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a class="nav-link" href="#nigm">Newly implemented Gameplay Mechanics</a>
+                    </li>
+                    
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Game Overview</h2>
+                <ul>
+                    <li>Genre: Top Down Shooter</li>
+                    <li>Theme: Win the War vs the Aliens</li>
+                    <li>Main Gameplay Style: 2-D Autoscroller. Survive and complete the main objectives</li>
+                </ul>
+                
+                <h2>Gameplay Examples:</h2>
+                <ul>
+                    <li>Games with Similar Gameplay Loops: Galaga, Starfox, Space Invaders</li>
+                    <li>
+                        Example level scenarios:
+                        <ol type="i">
+                            <li>Destroy all the enemies along your path in order to protect your home planet.</li>
+                            <li>Survive the enemies defenses so you can destroy the main battleship.</li>
+                            <li>Protect your ally until the end of the level.</li>
+                        </ol>
+                    </li>
+                </ul>      
+            </div>
+            <div class="col">
+                <img src="Screenshot 2024-11-09 223442.png" width="100%">
+            </div>
+        </div>
+    </div>
+    
+
+    <div id="ss" style="padding-top: 4rem;">
+        <h2>Scene Specifications</h2>
+        <h3 class="mt-3">Main Menu Scene</h3>
+        
+
+        <div class="row">
+            <img src="Screenshot 2024-11-10 011358.png" alt="" class="col-md-4">
+            <div class="col-md-8">
+                
+                Contains 4 tabs with differing functions:
+                <ul>
+                    <li>Play Game: Begins the main game.</li>
+                    <li>Level Editor: Opens the level editor scene. Can select any level to edit, or add a new level altogether</li>
+                    <li>Settings: Allows the player to perform multiple tasks, such as setting keybinds, modifying the music volume, or changing the difficulty</li>
+                    <li>Quit Game: Closes the game.</li>
+                </ul>
+                
+            </div>
+
+        </div>
+        
+
+        
+        
+        
+        <h3>Overworld Scene</h3>
+        Your spaceship can travel to the next planet once it has completed the relevant mission on the current planet. There will be multiple paths through the game, with each level being given a difficulty rating, from 1 to 3 stars. The player can choose to change their path to the end if they wish to modify the difficulty midway through the game.
+
+        <h3>Level Editor Scene</h3>
+        Allows the creation of levels, along with determining how the levels connect in the Overworld.
+
+        Excluding the scene for each individual level, each level in the Overworld creation scene must have these components:
+
+        <ul>
+            <li>The Difficulty of the level (measured as Stars)</li>
+            <li>The levels which proceed it</li>
+            <li>The levels you can travel to once it is completed</li>
+            <li>Any art assets to represent the level in the Overworld Scene</li>
+        </ul>
+        
+        
+        
+        
+
+        Individual Levels will allow you to set:
+
+        <ul>
+            <li>The speed of the auto-scroll for the level</li>
+            <li>The spawn location for enemies</li>
+            <li>The types of enemies which spawn</li>
+            <li>The spawn location for any obstacles (asteroids, space stations, etc...)</li>
+            <li>The length of the level (setting the start and beginning)</li>
+            <li>Whether a mini boss appears at the end of the level</li>
+            <li>Background/Decoration assets</li>
+            <li>Any power-ups/items/allies throughout the level</li>
+        </ul>
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+        <i>It is important to note that in the level editor you will only see assets relating to that level's difficulty. For example, Hard level enemies will not be seen when creating an Easy level.</i>
+        <h3>Game Over Scene</h3>
+        The game will be using a lives based system. The game over scene will be displayed once all lives are lost. The player will be given the option to go back to the main menu, or start the game over from the beginning.
+    </div>
+    <div id="sgm" style="padding-top: 4rem;">
+        <h2>Specific Game Mechanics</h2>
+        <h3 class="mt-3">Collisions</h3>
+        <h4>Player Collisions:</h4>
+        <ul>
+            <li>If the player collides with a basic enemy, the basic enemy is destroyed and the player loses some of their health.</li>
+            <li>If the player collides with an obstacle, the player takes damage and the obstacle is not destroyed.</li>
+            <li>If the player collides with a Boss enemy, the player takes damage and nothing happens to the Boss.</li>
+            <li>If an enemy attack (bullet, missile, or otherwise) collides with the player, the player takes a specified amount of damage.</li>
+            <li>Once the player takes damage, they will receive a certain amount of invincibility from collisions.</li>
+            <li>The player must touch the Status Effects listed under "Newly Implemented Gameplay Mechanics" in order to gain the specified effect.</li>
+            <li>There will be certain spawn zones (which are invisible) throughout the map. The player entering this zone will cause a pre-determined wave of enemies to approach the player.</li>
+        </ul>
+        
+        
+        
+        
+        
+        
+        
+        <h4>Ally NPC:</h4>
+        Shares all the same collisions the player has except for a few.
+
+        <ul>
+            <li>The Ally cannot interact with the Status Effect's throughout the level.</li>
+            <li>The Ally cannot take damage from colliding with obstacles (this is solely to make protection missions less frustrating for the player).</li>
+            <li>The Ally cannot collide with enemies, but still take damage from enemy attacks (bullets, missiles, etc...)</li>
+            <li>The Ally cannot trigger the spawning of enemies</li>
+        </ul>
+        
+        
+        
+        
+        <h4>Enemies:</h4>
+        Enemy attacks do not affect other enemies.
+        Enemies do not take damage from colliding with obstacles, but they still collide with obstacles such that they cannot phase through them.
+        Enemies interact with the player and Ally NPC as specified above in their sections.
+        Side-Scrolling Camera:
+        The Window will have a bounding box which only interacts with the player. The player cannot move outside of this bounding box, and the player cannot move the screen by colliding with it. The screen's bounding box however, will move the player if there is a collision such that the player will remain on screen at all times.
+
+        <h4>Movement</h4>
+        The Movement mechanics listed below consume an Energy Meter. This Energy meter refills over time.
+
+        Pivot: By holding a specified key, the sidescrolling camera stops, and the standard player movement becomes modified. The player cannot move, but instead can rotate themselves using "Left" and "Right" to change the angle of their attacks.
+        Teleport: By pressing a specific key and a direction, the player will teleport a certain distance. This movement will use a lot of the Energy Meter. The player will not run any collisions while teleporting except with the Window's bounding box. This is to make sure the player is always within the play screen.
+        Bullets/Weapons
+        Single Shot: From the tip of the ship, a singular bullet is fired in the direction the ship is pointed. This bullet is destroyed upon colliding with anything, and can damage only a single enemy.
+        Bomb: From the tip of the ship, a single bomb is fired in the direction the ship is pointed. This entity "explodes" upon colliding with anything or after a certain distance. The initial collision causes no damage, but results in an "Area of Effect" explosion to occur. Anything in the specified area takes a large amount of damage. This weapon is limited by 1 time use per pickup once collected throughout the stage. It is an Inventory item, and can only be collected in a level.
+        Tracker Shot: The player fires a shot with pathfinding capabilities. Once the proper status effect is collected, the bullet will hone in on the nearest enemy.
+        NPC's
+        Ally:
+
+        Will have Evade + Pathfinding capabilities. Is able to navigate through the level to follow the player, and is capable of evading enemies.
+
+        Will be able to shoot enemies, but only using the Single Shot weapon the player has.
+
+        Ally can supply the Player with Inventory items, such as the Repair Kit to heal them.
+
+        Basic Enemy:
+
+        Will have Shooting functionality. The enemy can fire a Single Shot at the current location of the player.
+
+        Will have Patrolling functionality. The enemies will have different random patterns of movement so the player cannot "camp their spawns."
+
+        Collision with the player will result in death for this enemy.
+
+        Buff Enemy:
+
+        This NPC has the capability to spawn Basic Enemies indefinitely, but at a maximum capacity spawned at one time.
+
+        This enemy will implement Raycasting. If the player enters a certain range, it will fire a large volume of Standard Shots across a wide area.
+
+        This enemy will implement Pathfinding. It will fire a "Missile" at the player, which will Pathfind to the player (not taking into account other enemies or obstacles). It will cause a small explosion upon impact and deal more damage than a Standard Shot, but less damage than a Bomb.
+
+        This enemy will appear at the end of levels they are placed in. The game will stop autoscrolling, so it acts as a sort of mini-boss fight.
+
+        Hit Points / Damage
+        Hit Points
+        Player: Has a percentage bar (visible on the UI) up to 100% health. Reducing health to 0 kills the player and gives a prompt to a player of whether they want to restart or go to the main menu (granted it is not a game over).
+        Ally: Will have less health than the Player, but their health will function the same. Once killed, they do not respawn unless the level is restarted.
+        Basic Enemy: Considered to have "1" health. Any amount of damage will destroy them.
+        Buff Enemy: Will have a large pool of health. Because of this large pool, this enemy will specifically not have invincibility frames implemented. Invincibility will be saved for the Player, Ally, and Final Boss. A small health percentage bar will be displayed on the enemy sprite. This is opposed to putting it elsewhere which could interfere with the Player's visibility of the ship.
+        Damage
+        Note: How much percent of a Character's (Player's, Ally's, Final Boss', etc...) health "1 Damage" results in will be determined during testing.
+
+        Standard Shot: Does a single point of damage, and only hits one enemy.
+        Bomb: Will do a single point of damage every few frames until its effect time has expired. Can hit multiple enemies. Anything in its radius takes damage.
+        Missile: Does more damage than a single shot. Upon impact, causing an explosion which has a larger hit collision, but only damages an entity a single time.
+        Tracker Shot: Same damage capabilities as the Standard Shot.
+        In-Game Inventory
+        The player can select any item in their inventory to use at any given time. The player can hold a maximum of 3 items. If the player picks up an item while the inventory is full, it fails to collect it. The 3 types of items are
+
+        Energy Shield: Once selected, the player will be invincible for a certain amount of time. Colliding with enemies (besides bosses) destroys that enemy.
+        Bomb: The player can launch an exploding bullet. After either a certain amount of time or colliding with an object, it explodes with a wide blast radius which deals damage to all enemies in its area.
+        Repair Kit: Repairs damage done to the ship. Can only be used if the player has sustained damage.
+        Ray Casting for Visibility
+        Buff enemies will be using Ray Casting to detect when they should change what attack they use. (Long Range = homing/pathfinding missile, short range = burst of Single Shots)
+        Enemies will wander as a group. Once the group uses Ray Casting to see the player, they will begin their own individual random movement/attack patterns.
+        When the Ally sees the Player, they will join them in the fight (the Ally will be specifically placed somewhere throughout a level).
+        Gravity / Accerleration
+        The buff enemy will have an attack that attracts the Player like a magnet. This serves to pull the Player into the burst attack range. In addition, it will make that attack harder to dodge as the player is still affected by the magnet.
+        Camera / World View
+        Vertical Auto-Scrolling. This will be the standard world view / level format
+        Radar Mini-Map. Shows key features, such as enemy locations or powerups, a full screen length ahead of the current viewport.
+        Final Boss
+        Will feature the main antagonist as Piccolo from Dragonball, but designed in a similar fashion to Andross from the game series Starfox. The fight will contain the following features:
+
+        Piccolo will be made up of 3 separate parts: His head, and his two hands.
+        Each body part will have their own hitboxes and health, with the head containing the most health.
+        Destroying one of the hands will not defeat the boss, but it will modify his attacks to be less daunting as he has less ways to attack the player.
+        Piccolo will have multiple varieties of attacks as listed below:
+        A standard bullet with a larger hitbox than normal
+        His "Special Beam Cannon" which will be a raycasting laser. It will use similar logic to Ray Casting with Simple Light Effects, as in if the player is in the area of the laser, they will take damage.
+        His "Hell Zone Grenade" which will surround the player on all sides with his bullets, and randomly launch inward towards the player.
+        His Hands will move to punch/attack the player individually, while the head will remain along the back rank.
+        Audio
+        Dave, we request voice clips of you for...reasons. It totally has nothing to do with the protagonist being called Dave or anything...
+
+        Sound effects will either be taken from online (like ship shooting noises from Galaga), or perhaps just capturing sounds in Audacity and converting to .wav
+
+        Music will be taken from different arcade games we believe fit the game.
+
+        All assets (art or otherwise) will of course be cited, we simply do not have any of the audio found at the time of the proposal.
+
+        <h4>Assets</h4>
+        Most assets will be taken from online, but some simple level structures may be drawn. 
+        Examples of what we are currently thinking of taking from online (like the ship from galaga) is included in the slides below.
+        <div id="assetImages" class="carousel slide w-25" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="pngkey.com-galaga-png-8599169.png" alt="First slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="pngegg.png" alt="Second slide">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#assetImages" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#assetImages" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+
+    </div>
+
+    <div id="nigm" style="padding-top: 4rem;">
+        <h2>Newly Implemented Gameplay Mechanics</h3>
+        <h3 class="mt-3">Options</h3>
+        The only difference to our options menu from the Project Specification is our Options menu will not include difficulty settings. The progression system of our game will determine whether the player plays an Easy, Normal, or Hard level
+        <h3>Game Progression</h3>
+        Progression is determined by traveling to different planets/areas once the current level (objective for that level) is completed. The Player is making their way to the Alien home world.
+        <h3>Status Effects</h3>
+        Speed Up: The player's Acceleration (speeding up) and max speed are increased for a specified duration.
+        Bullet Increase: Modifies the amount of bullets the player can fire at a time (for example, 2 shots fired side-by-side simultaneously when the "Fire" button is pressed). This power up is permanent and can stack.
+        Homing Bullets: The bullets use pathfinding to specifically target the closest enemy. This lasts for a specified duration.
+        <h3>UI / HUD</h3>
+        <div class="row">
+            <div class="col">
+                <img src="prototype1.png" width="100%">
+            </div>
+            <div class="col">
+                <ul>
+                    <li>Player's # of Lives</li>
+                    <li>Player's Health</li>
+                    <li>Current Level</li>
+                    <li>Save + Quit buttons</li>
+                    <li>Inventory (with items currently in the inventory always displayed)</li>
+                    <li>Radar (described in Camera / World View)</li>
+                </ul>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        An example sketch of this UI is given in the "prototype1.png" file located here in the Proposal file.
+
+        <h3>Moving Tiles</h3>
+        Obstacles (Meteors): Destructable entities moving across the screen throughout a level with a specific direction and velocity.
+        Structures (such as doors which open and close) in an enemy base.
+        <h4>Shaders</h4>
+        Teleporting Shader: The Ship will begin to fade to a blue/white mix, and its opacity will decrease until the ship teleports (not very long such that gameplay-wise it is impractical, but long enough to make it look cool).
+        Low Health Shader: Once below a certain threshold for health, the ship will begin to flash red. The frequency of these flashes, along with the intensity of the red will increase as health decreases.
+        Shield Shader: When the Player uses the Energy Shield Item from their Inventory, the ship will glow green.
+        <h3>Parallax</h3>
+        We will have a standard background which does not move but is animated, and a secondary background drawn over top with a velocity. The designs chosen will be level dependent.
+        <h3>Ray Casting for Simple Light Effect</h3>
+        Some enemy bases will have "Red Alert" lights and alarms. This alarm light will be our ray casting
+        <h3>Pathfinding/Steering</h3>
+        Ally NPC will implement the Evade Steering algorithm
+        The Missile weapon from the Buff enemy will have the Pahfinding Algorithm (going to the Player)
+        <h3>Extra Feature</h3>
+        Story Based Dialogue System
+        "Dave" (may or may not be you ;) ) will interact with the command post back home before and after missions, and with Allies / Enemies during a level
+        During dialogue, there will be animated sprites for the facial expressions of the character talking.
+        Ending cutscene after defeating the final boss
+    </div>
+</body>
+</html>
